@@ -7,7 +7,7 @@ col1, col2, col3 = st.columns(3)
 
 with col1:
     # GitHub에 올린 이미지 사용
-    st.image("images/pikachu.png", width=150)
+    st.image("images/picachu.png", width=150)
     if st.button("⚡ 피카츄"):
         st.write("피카츄를 선택했어요!")
         st.write("전기 공격! ⚡⚡⚡")
