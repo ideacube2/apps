@@ -79,35 +79,41 @@ with col3:
         st.toast("꼬부기를 선택했어요!", icon="💧")
         
 # 구분선
-st.write("---") 
 st.write("---")
-st.title("⚔️ 랜덤 포켓몬 배틀 ⚔️")
+st.title("⚔️ 내가 선택한 포켓몬 배틀 ⚔️")
 
-# 포켓몬 공격력 정보
+# 포켓몬 리스트
+pokemon_names = list(pokemon_info.keys())
+
+# 1. 사용자 선택
+my_choice = st.selectbox("내가 고를 포켓몬은?", pokemon_names)
+
+# 2. 상대 포켓몬 무작위 선택
+enemy_choice = random.choice(pokemon_names)
+
+# 3. 공격력 정보
 attack_power = {
     "피카츄": 55,
     "파이리": 50,
     "꼬부기": 53
 }
 
-if st.button("배틀 시작!"):
-    my_pokemon = random.choice(list(pokemon_info.keys()))
-    enemy_pokemon = random.choice(list(pokemon_info.keys()))
+# 4. 배틀 시작 버튼
+if st.button("🔥 배틀 시작!"):
+    st.write(f"🎮 내가 선택한 포켓몬: **{my_choice}** {pokemon_info[my_choice]['이모지']}")
+    st.write(f"👾 상대 포켓몬: **{enemy_choice}** {pokemon_info[enemy_choice]['이모지']}")
 
-    st.write(f"🎮 내가 선택한 포켓몬: **{my_pokemon}** {pokemon_info[my_pokemon]['이모지']}")
-    st.write(f"👾 상대 포켓몬: **{enemy_pokemon}** {pokemon_info[enemy_pokemon]['이모지']}")
+    my_power = attack_power[my_choice]
+    enemy_power = attack_power[enemy_choice]
 
-    my_power = attack_power[my_pokemon]
-    enemy_power = attack_power[enemy_pokemon]
-
-    st.progress(min(my_power, 100))
-    st.progress(min(enemy_power, 100))
+    st.progress(my_power)
+    st.progress(enemy_power)
 
     if my_power > enemy_power:
-        st.success(f"{my_pokemon} 승리! 🏆")
+        st.success(f"{my_choice} 승리! 🏆")
         st.balloons()
     elif my_power < enemy_power:
-        st.error(f"{enemy_pokemon} 승리! 😱")
+        st.error(f"{enemy_choice} 승리! 😱")
         st.snow()
     else:
         st.info("무승부! 다시 도전해보세요 🎲")
