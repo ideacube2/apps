@@ -1,12 +1,8 @@
 import streamlit as st
 import random
-# 제목  
-# 포켓몬 선택 게임
-# Streamlit 앱 시작
 
-st.title("⚡ 포켓몬 선택 게임 ⚡")
-st.write("어떤 포켓몬을 선택할까요?")
-# 제목  
+# 포켓몬 선택 게임 Streamlit 앱 시작
+# 제목    
 st.title("⚡ 포켓몬 선택 게임 ⚡")
 
 # 🎵 배경음악 삽입 (GitHub 또는 로컬 경로에 맞게 변경)
