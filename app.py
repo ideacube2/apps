@@ -10,7 +10,7 @@ st.write("어떤 포켓몬을 선택할까요?")
 st.title("⚡ 포켓몬 선택 게임 ⚡")
 
 # 🎵 배경음악 삽입 (GitHub 또는 로컬 경로에 맞게 변경)
-st.audio("/music/battle_theme.mp3", format="audio/mp3", start_time=0)
+st.audio("music/battle_theme.mp3", format="audio/mp3", start_time=0)
 
 st.write("어떤 포켓몬을 선택할까요?")
 
