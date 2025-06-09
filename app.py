@@ -45,7 +45,7 @@ pokemon_info = {
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.image("images/pikachu.png", width=120)
+    st.image("images/picachu.png", width=120)
     if st.button("⚡ 피카츄", key="pika"):
         info = pokemon_info["피카츄"]
         st.success("피카츄 선택!")
